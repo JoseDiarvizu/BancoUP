@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+  <title>Banco UP</title>
+</head>
+<body>
+  <nav>
+    <h4>Banco UP</h4>
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      {{#if user }}
+        <li><a href="/transfers">Transferencias</a></li>
+        <li><a href="/profile">Perfil</a></li>
+        <li><a href="/auth/logout">Salir</a></li>
+      {{else}}
+        <li><a href="/login">Iniciar sesión</a></li>
+        <li><a href="/register">Registro</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="jumbotron">
+      <h1 class="display-4">Proyecto Banco UP</h1>
+      <p class="lead">Este es un proyecto de un sistema de transferencias bancarias simples</p>
+      <hr class="my-4">
+      {{#if user}}
+      <p>¡Bienvenido! ¿Ya revisaste tu perfil?</p>
+      <a class="btn btn-primary btn-lg" href="/profile" role="button">Ver mi perfil</a>
+      {{else}}
+      <p>Si no tienes una cuenta, ¡regístrate aquí!</p>
+      <a class="btn btn-primary btn-lg" href="/register" role="button">Registro</a>
+      {{/if}}
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</body>
+</html>
